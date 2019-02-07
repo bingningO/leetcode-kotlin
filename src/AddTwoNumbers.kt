@@ -1,3 +1,6 @@
+import util.LeetCodeUtil
+import util.ListNode
+
 fun main(args: Array<String>) {
 
     val l1 = ListNode(2)

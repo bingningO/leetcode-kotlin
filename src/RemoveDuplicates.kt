@@ -1,5 +1,3 @@
-import org.omg.CORBA.INTERNAL
-
 fun main(args: Array<String>) {
     val test1 = intArrayOf( 1, 1, 2)
     val test2 = intArrayOf()

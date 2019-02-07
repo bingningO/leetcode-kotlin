@@ -1,10 +1,10 @@
-
+import util.ListNode
 
 fun main(args: Array<String>) {
 
     // test compareReturnSmallerOne
-//    val l1 = ListNode(2)
-//    val l2 = ListNode(3)
+//    val l1 = util.ListNode(2)
+//    val l2 = util.ListNode(3)
 //    println(compareReturnSmallerOne(l1, l2)!!.`val`)
 
     // test mergeTwoLists
