@@ -24,17 +24,22 @@ fun main(args: Array<String>) {
 
     println(isSymmetric(root1))
 
+    root22.`val` = 3
+    println(isSymmetric(root1))
+
+    println(isSymmetric(root21))
 }
 
 
 fun isSymmetric(root: TreeNode?): Boolean {
-
+    if (root == null) return true
+    return isSymmetricBase(root.left, root.right)
 }
 
-private fun makeTreeToInOrder(root: TreeNode?): LinkedList<TreeNode> {
-    var charArray = LinkedList<TreeNode>()
-    if (root == null) return charArray
-    var newRoot = root
-    while ()
-
+private fun isSymmetricBase(left: TreeNode?, right : TreeNode?): Boolean {
+    if (left == null && right == null) return true
+    if (left == null) return false
+    if (right == null) return false
+    if (left.`val` != right.`val`) return false
+    return isSymmetricBase(left.left, right.right) && isSymmetricBase(left.right, right.left)
 }
