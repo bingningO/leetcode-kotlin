@@ -8,9 +8,9 @@ fun main(args: Array<String>) {
 
 // 动态规划，做到O（n^2）
 fun longestPalindrome(s: String): String {
-
+    return s
 }
 
 private fun longestBase(s: String): String {
-
+    return s
 }
