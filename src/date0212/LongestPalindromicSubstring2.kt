@@ -12,5 +12,5 @@ fun longestPalindrome(s: String): String {
 }
 
 private fun longestBase(s: String): String {
-    
+
 }
