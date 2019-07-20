@@ -30,7 +30,7 @@ fun threeSum1(nums: IntArray): List<List<Int>> {
 }
 
 // trying new ways
-fun threeSum(nums: IntArray): List<List<Int>> {
+fun threeSum2(nums: IntArray): List<List<Int>> {
     val result = mutableListOf<List<Int>>()
     nums.sort()
     for (i in 0 until nums.size) {
@@ -53,6 +53,42 @@ fun threeSum(nums: IntArray): List<List<Int>> {
                 } else if (nums[middle] > third) {
                     right = middle - 1
                 }
+            }
+        }
+    }
+    return result
+}
+
+// trying new ways
+fun threeSum(nums: IntArray): List<List<Int>> {
+    val result = mutableListOf<List<Int>>()
+    nums.sort()
+    for (i in 0 until nums.size) {
+        if (nums[i] > 0) break
+        if (i > 0 && nums[i] == nums[i-1]) continue
+        // small/ large index
+        var small = i + 1
+        var large = nums.size - 1
+        while (small < large) {
+            if (nums[i] + nums[small] > 0 || nums[large] < 0) break
+            if (small > i+1 && nums[small] == nums[small -1]) {
+                small++
+                continue
+            }
+            if (large < nums.size -1 && nums[large]==nums[large+1]) {
+                large--
+                continue
+            }
+            val sum = nums[i] + nums[small] + nums[large]
+            when {
+                sum == 0 -> {
+                    val item = listOf(nums[i], nums[small], nums[large])
+                    result.add(item)
+                    small++
+                    large--
+                }
+                sum > 0 -> large--
+                sum < 0 -> small++
             }
         }
     }
