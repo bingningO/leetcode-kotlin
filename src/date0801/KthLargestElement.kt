@@ -2,7 +2,7 @@ package date0801
 
 
 fun main(array: Array<String>) {
-    val key = KthLargest(1, intArrayOf())
+    val key = KthLargest(3, intArrayOf(2,6,8,9,1,3))
     println(key.add(3))
     println(key.add(5))
     println(key.add(10))
@@ -37,31 +37,6 @@ class KthLargest2(k: Int, nums: IntArray) {
 
         }
         return kArray.last()
-    }
-
-}
-
-// use priorityQueue
-class KthLargest(k: Int, nums: IntArray) {
-
-    private val kHeap = java.util.PriorityQueue<Int>()
-    private val kth = k
-
-    init {
-        nums.forEach {
-            kHeap.add(it)
-            if (kHeap.size > k) {
-                kHeap.poll()
-            }
-        }
-    }
-
-    fun add(`val`: Int): Int {
-        kHeap.add(`val`)
-        if (kHeap.size > kth) {
-            kHeap.poll()
-        }
-        return kHeap.peek()
     }
 
 }
