@@ -2,7 +2,7 @@ package date0801
 
 
 fun main(array: Array<String>) {
-    val key = KthLargest(3, intArrayOf(2,6,8,9,1,3))
+    val key = KthLargest2(3, intArrayOf(2,6,8,9,1,3))
     println(key.add(3))
     println(key.add(5))
     println(key.add(10))
